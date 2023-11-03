@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        task1();
+        task2();
 
     }
     //Task1
@@ -37,5 +37,32 @@ public class Main {
         }
 
         System.out.println(message);
+    }
+
+    //Task2
+    public static void task2(){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Введите кол-во часов (от 0 до 24)");
+        int hour = scanner.nextInt();
+
+        if(hour >= 0 && hour <= 24){
+
+            if(hour >= 6 && hour < 12){
+                System.out.println("Доброе утро!");
+            }
+            if(hour >= 12 && hour < 17){
+                System.out.println("Добрый день!");
+            }
+            if(hour >= 17 && hour < 22){
+                System.out.println("Добрый вечер!");
+            }
+            if((hour >= 22 && hour <= 24) || (hour >= 0 && hour < 6)){
+                System.out.println("Доброй ночи!");
+            }
+
+        } else {
+            System.out.println("Вы ввели некорректные данные");
+        }
     }
 }
