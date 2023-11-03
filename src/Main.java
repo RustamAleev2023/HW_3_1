@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        task3();
+        task4();
 
     }
 
@@ -133,5 +133,39 @@ public class Main {
                 break;
         }
         System.out.println(voice);
+    }
+
+    //Task4
+    public static void task4(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите координаты точки");
+        System.out.println("Введите координату X (от -10 до 10)");
+        int x = scanner.nextInt();
+        System.out.println("Введите координату Y (от -10 до 10)");
+        int y = scanner.nextInt();
+        scanner.close();
+        String message="";
+        System.out.println("X = " + x);
+        System.out.println("Y = " + y);
+        System.out.print("Четверть: ");
+
+        if((x > -10 && x < 10) && (y > -10 && y < 10)){
+            if(x > 0 && y > 0){
+                message = "I";
+            }
+            if(x > 0 && y < 0){
+                message = "IV";
+            }
+            if(x < 0 && y < 0){
+                message = "III";
+            }
+            if(x < 0 && y > 0){
+                message = "II";
+            }
+        } else {
+            message = "Вы ввели неверные координаты";
+        }
+
+        System.out.println(message);
     }
 }
