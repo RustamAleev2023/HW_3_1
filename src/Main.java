@@ -3,7 +3,10 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        task5();
+        task7();
+
+
+
 
     }
 
@@ -301,5 +304,58 @@ public class Main {
         System.out.println("Знак: " + zodiac);
         System.out.println("Год: " + chinaCalendar);
 
+    }
+
+    //Task6
+    public static void task6(){
+        System.out.println("Введите год");
+        Scanner scanner = new Scanner(System.in);
+
+        int year = scanner.nextInt();
+
+        if(year % 4 == 0 && year % 400 != 0){
+            System.out.println("366");
+        } else {
+            System.out.println("365");
+        }
+    }
+
+    //Task7
+    public static void task7() {
+        String[] rus = {"а", "б", "в", "г", "д", "е", "ё", "ж", "и", "к", "л", "м", "н", "о", "п", "р", "с", "т", "у", "ф", "х", "ц", "ч", "ш", "щ", "ъ", "ы", "ь", "э", "ю", "я"};
+        String[] eng = {"a", "b", "c", "d", "e", "f", "g", "h",  "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
+        String[] digit = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
+        boolean isFound = false;
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите букву или цифру");
+        String letter = scanner.next();
+
+        scanner.close();
+
+
+        for (String s : eng) {
+            if(s.equalsIgnoreCase(letter)){
+                System.out.println("латиница");
+                isFound = true;
+            }
+
+        }
+        for (String s : rus) {
+            if(s.equalsIgnoreCase(letter)){
+                System.out.println("кирилица");
+                isFound = true;
+            }
+        }
+        for (String s : digit) {
+            if(s.equalsIgnoreCase(letter)){
+                System.out.println("цифра");
+                isFound = true;
+            }
+
+        }
+        if(!isFound){
+            System.out.println("невозможно определить");
+        }
     }
 }
