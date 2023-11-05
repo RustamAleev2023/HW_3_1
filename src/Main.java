@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        task10();
+        task11();
 
 
     }
@@ -414,7 +414,6 @@ public class Main {
         System.out.println("Введите номер квартиры");
         n = scanner.nextInt();
 
-
         scanner.close();
         if (n % (9 * m) != 0) {
             entrance = n / (9 * m) + 1;
@@ -423,6 +422,44 @@ public class Main {
         }
 
         System.out.println("Номер подъезда " + entrance);
+
+    }
+
+    //Task11
+    public static void task11(){
+
+        double a;
+        double b;
+        double c;
+
+        System.out.println("Решаем квадратное уравнение вида: ");
+        System.out.println("ax^2 + bx +c = 0");
+        System.out.println("Введите a");
+
+        Scanner scanner = new Scanner(System.in);
+        a = scanner.nextDouble();
+        System.out.println("Введите b");
+        b = scanner.nextDouble();
+        System.out.println("Введите c");
+        c = scanner.nextDouble();
+        scanner.close();
+
+        double d = b * b - 4 * a * c;
+        if(d > 0){
+            double x1, x2;
+            x1 = (-b - Math.sqrt(d)) / (2 * a);
+            x2 = (-b + Math.sqrt(d)) / (2 * a);
+            System.out.println("Корни уравнения: x1 = " + x1 + ", x2 = " + x2);
+        }
+        else if (d == 0) {
+            double x;
+            x = -b / (2 * a);
+            System.out.println("Уравнение имеет единственный корень: x = " + x);
+        }
+        else {
+            System.out.println("Уравнение не имеет действительных корней!");
+        }
+
 
     }
 
