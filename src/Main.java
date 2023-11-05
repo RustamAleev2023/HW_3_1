@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        task9();
+        task10();
 
 
     }
@@ -378,25 +378,51 @@ public class Main {
     }
 
     //Task9
-    public static void task9(){
+    public static void task9() {
         int startX = 10;
         int startY = 10000;
 
         int finishX = 10;
         int finishY = 100;
 
-        if(startX != finishX && startY < finishY){
+        if (startX != finishX && startY < finishY) {
             System.out.println("Подъем");
         }
-        if(startX != finishX && startY > finishY){
+        if (startX != finishX && startY > finishY) {
             System.out.println("Спуск");
         }
-        if(startX != finishX && startY == finishY){
+        if (startX != finishX && startY == finishY) {
             System.out.println("Ровная дорога");
         }
-        if(startX == finishX && startY != finishY){
+        if (startX == finishX && startY != finishY) {
             System.out.println("Отвесная дорога");
         }
+
+    }
+
+    //Task10
+    public static void task10() {
+        int floor = 9;
+        int m; //кол-во квартир на этаже
+        int n; //номер квартиры
+        int entrance; //номер подъезда
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Введите кол-во квартир на этаже");
+        m = scanner.nextInt();
+        System.out.println("Введите номер квартиры");
+        n = scanner.nextInt();
+
+
+        scanner.close();
+        if (n % (9 * m) != 0) {
+            entrance = n / (9 * m) + 1;
+        } else {
+            entrance = n / (9 * m);
+        }
+
+        System.out.println("Номер подъезда " + entrance);
 
     }
 
